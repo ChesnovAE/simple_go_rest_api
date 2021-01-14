@@ -1,9 +1,20 @@
 package handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/ChesnovAE/simple_go_rest_api/pkg/service"
+	"github.com/gin-gonic/gin"
+)
 
 // Handler ...
 type Handler struct {
+	services *service.Service
+}
+
+// NewHandler ...
+func NewHandler(services *service.Service) *Handler {
+	return &Handler{
+		services: services,
+	}
 }
 
 // InitRoutes ...
